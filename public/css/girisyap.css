@@ -1,0 +1,120 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-size: cover;
+    background-position: center;
+    background: #5C258D;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4389A2, #5C258D);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4389A2, #5C258D);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+html {
+    font-size: 16px;
+}
+
+.header {
+    background-color: #ffffff4b;
+    height: 4.4rem;
+    border-bottom-style: solid;
+    border-color: #ffffff;
+}
+
+.header h1 {
+    color: #ffffff;
+    font-weight: 800;
+    padding-top: 1.5rem;
+    text-align: center;
+    font-family: Georia, 'Times New Roman', Times, serif;
+    /*text-decoration:underline;   altı çizili yapmak içindi*/
+}
+
+.giriskutusu {
+    width: 320px;
+    height: 420px;
+    background: rgba(0, 0, 0, 0.404);
+    color: #fff;
+    top: 55%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    border-radius: 30px;
+    /* Köşelerin yuvarlak olması için*/
+    padding: 70px 30px;
+    border-bottom-style: solid;
+    border-top-style: solid;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+
+h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.giriskutusu p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.giriskutusu input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.giriskutusu input[type="email"],
+input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.giriskutusu input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #40c0b5;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.giriskutusu input[type="submit"]:hover {
+    /*Fare üzerine geldiğinde olacak değişklikler için hover özelliğini kullanıyoruz.*/
+    cursor: pointer;
+    background: #7c49c4;
+    color: #000;
+}
+
+.giriskutusu a {
+    text-decoration: none;
+    font-size: 1rem;
+    line-height: 20px;
+    color: darkgrey;
+
+}
+
+.giriskutusu a:hover {
+    color: green;
+}

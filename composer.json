@@ -1,0 +1,7 @@
+{
+    "require": {
+        "mongodb/mongodb": "^1.12",
+        "google/recaptcha": "^1.2",
+        "phpmailer/phpmailer": "^6.7"
+    }
+}

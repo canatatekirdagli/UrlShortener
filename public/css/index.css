@@ -1,0 +1,405 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-size: cover;
+    background-position: center;
+    background: #5C258D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4389A2, #5C258D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4389A2, #5C258D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+html {
+    font-size: 16px;
+}
+
+.header {
+    background-color: #ffffff4b;
+    height: 4.4rem;
+    border-bottom-style:solid;
+    border-color: #ffffff;
+}
+
+.header h1 {
+    color: #ffffff;
+    font-weight: 800;
+    padding-top: 1rem;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /*text-decoration:underline;   altı çizili yapmak içindi*/
+}
+
+
+.x {
+    width: 50rem;
+    height: 19rem;
+    background: transparent;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ffffff;
+    top: 45%;
+    left: 50%;
+    position: absolute;
+    box-sizing: border-box;
+    border-radius: 30px;
+    /* Köşelerin yuvarlak olması için*/
+    padding: 1rem 1rem;
+    margin-left: -25rem;
+    margin-top: -7rem;
+}
+
+.x input {
+    width: 100%;
+    margin-bottom: 1.8rem;
+}
+
+.x input[type=url] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding-left: 40px;
+}
+
+.x input[type=submit] {
+    background: #40c0b5;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    height: 2.6rem;
+}
+
+.x input[type=submit]:hover {
+    cursor: pointer;
+    background: #7c49c4;
+}
+
+
+
+
+
+#button {
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    opacity: 0.8;
+    display: inline-block;
+    /*butonları yan yana koyar*/
+}
+
+#button:hover {
+    opacity: 1;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+#button-text {
+    margin-left: 5px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.button1 {
+    margin-left: 400px;
+    display: flex;
+    align-items: center;
+    padding-left: 5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    opacity: 0.8;
+    display: inline-block;
+    /*butonları yan yana koyar*/
+}
+
+.button1:hover {
+    opacity: 1;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.button1-text {
+    margin-left: 5px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.button2 {
+    align-items: center;
+    padding-left: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    opacity: 0.8;
+    display: inline-block;
+    /*butonları yan yana koyar*/
+}
+
+.button2:hover {
+    opacity: 1;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.button2-text {
+    margin-left: 5px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+
+.linkler {
+    text-align: right;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.548);
+}
+
+.modal form {
+    position: relative;
+    min-width: 30%;
+    min-width: 30;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background: white;
+    border-radius: 1.5rem;
+}
+
+#modal-kapat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: gray;
+    padding: 0.6rem;
+    border-bottom-left-radius: 1rem;
+    cursor: pointer;
+}
+
+#modal-kapat:hover {
+    background: rgb(90, 88, 88);
+}
+
+p {
+    font-size: large;
+}
+
+#liste {
+    font-size: large;
+}
+
+#uyelink{
+    color: #ffffff;
+
+}
+
+.modal1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.548);
+}
+
+.modal1 form {
+    position: relative;
+    min-width: 30%;
+    min-width: 30;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background: white;
+    border-radius: 1.5rem;
+}
+.modal table, th, td {
+    border: 1px solid rgb(206, 205, 205);
+    border-collapse: collapse;
+}
+#modal-kapat1 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: gray;
+    padding: 0.6rem;
+    border-bottom-left-radius: 1rem;
+    cursor: pointer;
+}
+
+#modal-kapat:hover {
+    background: rgb(90, 88, 88);
+}
+
+
+#iletisimlink{
+    color: #ffffff;
+
+}
+
+
+.kopyalatip {
+    position: relative;
+    display: inline-block;
+}
+
+.kopyalatip .tooltiptext {
+    width: 140px;
+    background-color: rgb(126, 125, 125);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.kopyalatip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+
+#kopyalabuton{
+    background: #40c0b5;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 0.74rem 0.5rem;
+    margin-top: 0.5rem;
+}
+.deneme {
+    position: relative;
+    display: inline-block;
+}
+
+.deneme .tooltiptext {
+    width: 140px;
+    background-color: rgb(126, 125, 125);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.deneme .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+
+#denemebuton{
+    background: #40c0b5;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 0.74rem 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.Icon-inside {
+    position: relative;
+}
+
+.Icon-inside i {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    padding: 10px 10px;
+    color: #6e6e6e;
+}
+
+#sonuc{
+    display: none;
+    width: 42rem;
+    height: 2.6rem;
+    float: left;
+    font-size: 16px;
+}
+
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 16px;
+}
+
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+#duzenle{
+    color:#40c0b5 ;
+
+}
+
+#duzenle:hover {
+    color: #fff;
+}
+
+#tableduzenle{
+    width: 50rem;
+    top: 80%;
+    left: 50%;
+    position: absolute;
+    box-sizing: border-box;
+    padding: 1rem 1rem;
+    margin-left: -25rem;
+    margin-top: -5rem;
+}
