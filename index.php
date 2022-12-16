@@ -28,6 +28,8 @@ require 'vendor/autoload.php';
 <div class="header">
     <h1>Ant Link Kısaltma </h1>
 </div>
+<?php $sonuc="" ?>
+<br>
 
 <div class="x">
 
@@ -52,10 +54,10 @@ require 'vendor/autoload.php';
         $url = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$response&remoteip=$remoteip");
         $result=json_decode($url,TRUE);
         $link=strip_tags($_POST['link']);
-        if ($link!="")
+        if ($result['success']==1)
         {
 
-            if ($result['success']==1)
+            if ($link!="")
             {
                 if (filter_var($link,FILTER_VALIDATE_URL))
                 {
@@ -82,14 +84,16 @@ require 'vendor/autoload.php';
                             'bitisTarih'=>date('d.m.Y H:i:s', strtotime('+3 days')),
                             'hit'=>0,
                         ]); ?>
-        <div class="Icon-inside">
-            <i class="fa fa-link fa-lg fa-fw" aria-hidden="true"></i>
-            <input type="url" value=<?=SITE_URL?>/i/<?=$kodKisa?> name="sonuc" id="sonuc">
-        </div>
+            <div class="Icon-inside">
+                <i class="fa fa-link fa-lg fa-fw" aria-hidden=true></i>
+                <input type="url" value=<?=SITE_URL?>/i/<?=$kodKisa?> class="form-control" id="url"/>
+            </div>
 
-        <div class="kopyalatip">
-            <button id="kopyalabuton" onclick="kopyala()" >KOPYALA</button>
-        </div>
+            <div class="deneme">
+                <button id="denemebuton" onclick="kopyala()">Kopyala
+                    <span class="tooltiptext" id="myTooltip">Panoya Kopyala</span>
+                </button>
+            </div>
                         <script>
                             function kopyala(){
                                 var metin = document.getElementById("url");
@@ -106,12 +110,16 @@ require 'vendor/autoload.php';
                             ['link'=>$link],
                             ['$set'=>['bitisTarih'=>date('d.m.Y H:i:s', strtotime('+3 days'))]]
                         ); ?>
+
             <div class="Icon-inside">
                 <i class="fa fa-link fa-lg fa-fw" aria-hidden=true></i>
                 <input type="url" value=<?=SITE_URL?>/i/<?=$link2?> class="form-control" id="url"/>
             </div>
+
             <div class="deneme">
-                <button id="denemebuton" onclick="kopyala()">Kopyala</button>
+                <button id="denemebuton" onclick="kopyala()">Kopyala
+                    <span class="tooltiptext" id="myTooltip">Panoya Kopyala</span>
+                </button>
             </div>
             <script>
                 function kopyala(){
@@ -136,31 +144,29 @@ require 'vendor/autoload.php';
             else
             {
                     ?> <script>
-                alert("Lütfen Geçerli Link Giriniz!")
-            </script>
+            alert("Lütfen Geçerli Link Giriniz!")
+        </script>
 
-                <?php
-            }
+        <?php    }
+
         }
         else
         {
-                ?> <script>
-            alert("Lütfen Recaptcha'yı Doğrulayın!")
-        </script>
 
-            <?php
+
+            $sonuc= "Lütfen Recaptcha'yı Doğrulayın!";
+
+
         }
+
     }
 
     ?>
 
-
-
-    <div class="kopyalatip">
         <div class="g-recaptcha" data-sitekey="6LePXmgjAAAAAIzGEZREM9PgvqYXb5tgC-Vz1wvV"></div>
-    </div>
 
     <input type="submit" value="Kısalt" id="kısalt">
+
 
     <div class="linkler">
         <a id="uyelink" href="#">Üyelik Avantajları</a>
@@ -168,6 +174,8 @@ require 'vendor/autoload.php';
 
 </div>
 </form>
+
+<h2 id="hata" ><?=$sonuc?></h2>
 
 <div class="modal">
     <form>
@@ -234,13 +242,11 @@ foreach ( $bul as $item) {
         <table>
             <tr>
                 <td>En Çok Tıklanan Link</td>
-                <td><?=$encoktik?> </td>
                 <td>http://localhost/UrlShortener/i/<?=$encokkod?> </td>
             </tr>
             <tr>
                 <td>En Çok Link Kısaltan Kullanıcı </td>
                 <td>@<?=$ad?></td>
-                <td><?=$hit1?></td>
             </tr>
         </table>
     </form>

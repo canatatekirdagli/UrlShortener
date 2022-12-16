@@ -3,7 +3,13 @@ define("SITE_URL","http://localhost/UrlShortener");
 require 'vendor/autoload.php';
 session_start();
 
+if ($_SESSION['email']=="")
+{
+    header("Location:index.php");
+}
 
+
+$sonuc="";
 $client = new MongoDB\Client("mongodb+srv://root:1234@mydb.hnuneft.mongodb.net/?retryWrites=true&w=majority");
 $db = $client->UrlShortener;
 
@@ -51,7 +57,7 @@ foreach ($bul as $a){
     <a id="istatistik" class="button" href="#"><span> İSTATİSTİKLER</span></a>
     <a id="button" class="button1" href="sifredegis.php"><i class="fa-solid fa-user-plus"></i><span> ŞİFRE
         DEĞİŞTİR</span></a>
-    <a id="button" class="button2" href="oturumac.php"><i
+    <a id="button" class="button2" href="cikisyap.php"><i
             class="fa-sharp fa-solid fa-arrow-right-to-bracket"></i><span> ÇIKIŞ YAP</span></a>
 
     <form action="" method="POST">
@@ -97,14 +103,16 @@ foreach ($bul as $a){
                             'olusturan'=>$kullaniciAdi,
                             'hit'=>0,
                         ]); ?>
-                        <div class="Icon-inside">
-                            <i class="fa fa-link fa-lg fa-fw" aria-hidden="true"></i>
-                            <input type="url" value=<?=SITE_URL?>/i/<?=$kodKisa?> name="sonuc" id="sonuc">
-                        </div>
+                <div class="Icon-inside">
+                    <i class="fa fa-link fa-lg fa-fw" aria-hidden=true></i>
+                    <input type="url" value=<?=SITE_URL?>/i/<?=$kodKisa?> class="form-control" id="url"/>
+                </div>
 
-                        <div class="kopyalatip">
-                            <button id="kopyalabuton" onclick="kopyala()" >KOPYALA</button>
-                        </div>
+                <div class="deneme">
+                    <button id="denemebuton" onclick="kopyala()">Kopyala
+                        <span class="tooltiptext" id="myTooltip">Panoya Kopyala</span>
+                    </button>
+                </div>
                         <script>
                             function kopyala(){
                                 var metin = document.getElementById("url");
@@ -136,23 +144,21 @@ foreach ($bul as $a){
             }
             else
             {
-                        ?> <script>
-                alert("Lütfen Recaptcha'yı Doğrulayın!")
-            </script>
-
-                <?php
+                $sonuc= "Lütfen Recaptcha'yı Doğrulayın!";
             }
         }
         ?>
-        <?=SITE_URL?>/i/<?=$link2?>
-    <div class="kopyalatip">
+
         <div class="g-recaptcha" data-sitekey="6LePXmgjAAAAAIzGEZREM9PgvqYXb5tgC-Vz1wvV"></div>
-    </div>
+
 
     <input type="submit" value="Kısalt" id="kısalt">
 
 </div>
 </form>
+
+</br>
+<h2 id="hata" style="text-align: center" ><?=$sonuc?></h2>
 
 <div id="tableduzenle" style="overflow-x:auto;">
     <table>
@@ -197,8 +203,8 @@ foreach ($bul as $a){
                 <td><?= $item['hit'] ?></td>
                 <td><?= $item['olusTarih'] ?></td>
                 <td><?= $item['bitisTarih'] ?></td>
-                <td><a href="linksil.php?pid=<?=$item['kod']?>" id="sil" class="btn btn-danger">Sil</a></td>
-                <td style="text-align:center"><a id="guncelle" href="#">Güncelle</a></td>
+                <td><a href="linksil.php?kod=<?=$item['kod']?>" id="sil" class="btn btn-danger">Sil</a></td>
+                <td style="text-align:center"><a id="guncelle" href="#" >Güncelle</a></td>
 
             </tr>
 
@@ -254,15 +260,18 @@ foreach ( $bul as $item) {
     <form>
         <h3 id="modal-kapat">X</h3>
         <table>
+
             <tr>
                 <td>Kod: </td>
-                <td> <input type="text"> </td>
+                <td> <input type="text" value="<?=$_SESSION['kod'] ?> "> </td>
             </tr>
             <tr>
                 <td> Son Kullanma Tarihi: </td>
-                <td> <input type="date"> </td>
+                <td> <input type="datetime-local"> </td>
             </tr>
         </table>
+        <input type="submit" value="Kaydet" id="kisalt">
+
     </form>
 </div>
 
@@ -274,13 +283,12 @@ foreach ( $bul as $item) {
         <table>
             <tr>
                 <td>En Çok Tıklanan Link</td>
-                <td><?=$encoktik?> </td>
                 <td>http://localhost/UrlShortener/i/<?=$encokkod?> </td>
             </tr>
             <tr>
                 <td>En Çok Link Kısaltan Kullanıcı </td>
                 <td>@<?=$ad?></td>
-                <td><?=$hit1?></td>
+
             </tr>
         </table>
     </form>

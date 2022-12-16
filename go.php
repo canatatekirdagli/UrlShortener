@@ -53,11 +53,11 @@ if ($kod!="")
             $bugun=date("d-m-Y");
             if ($bugun>$bitisTar)
             {
-                helper::yonlendir("http://localhost/UrlShortener/404.php"); //HATA SAYFASINA GİDİCEK GEÇERLİLİĞİ BİTMİŞ
+                helper::yonlendirme("http://localhost/UrlShortener/404.php"); //HATA SAYFASINA GİDİCEK GEÇERLİLİĞİ BİTMİŞ
             }
             else
             {
-                helper::yonlendir($link);
+                helper::yonlendirme($link);
             }
 
 
