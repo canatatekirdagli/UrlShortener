@@ -64,6 +64,7 @@ require 'vendor/autoload.php';
                     $client = new MongoDB\Client("mongodb+srv://root:1234@mydb.hnuneft.mongodb.net/?retryWrites=true&w=majority");
                     $db = $client->UrlShortener;
                     $collection = $client->UrlShortener->kisalt;
+                    $collection1 = $client->UrlShortener->uyekisalt;
                     $item=$collection->count(['link'=>$link]);
                     $bul=$collection->find(
                         [
@@ -75,8 +76,14 @@ require 'vendor/autoload.php';
                     }
                     if ($item==0)
                     {
-                        $kod=md5(uniqid());
-                        $kodKisa=substr($kod,0,10);
+                        do
+                        {
+                            $kod=md5(uniqid());
+                            $kodKisa=substr($kod,0,10);
+                            $item1=$collection->count(['kod'=>$kodKisa]);
+                            $item2=$collection1->count(['link'=>$kodKisa]);
+                        }while($item1!=0 && $item2!=0);
+
                         $insertOneResult = $collection->insertOne([
                             'link' => $link,
                             'kod' => $kodKisa,

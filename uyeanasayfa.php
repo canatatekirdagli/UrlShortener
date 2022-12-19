@@ -84,6 +84,7 @@ foreach ($bul as $a){
                     if (filter_var($link,FILTER_VALIDATE_URL))
                     {
                         $collection = $client->UrlShortener->uyekisalt;
+                        $collection3 = $client->UrlShortener->kisalt;
                         $item=$collection->count(['link'=>$link]);
                         $bul=$collection->find(
                             [
@@ -93,8 +94,13 @@ foreach ($bul as $a){
                         foreach ($bul as $a){
                             $link2=$a['kod'];
                         }
-                        $kod=md5(uniqid());
-                        $kodKisa=substr($kod,0,10);
+                        do
+                        {
+                            $kod=md5(uniqid());
+                            $kodKisa=substr($kod,0,10);
+                            $item1=$collection->count(['kod'=>$kodKisa]);
+                            $item2=$collection3->count(['kod'=>$kodKisa]);
+                        }while($item1!=0 && $item2!=0);
                         $insertOneResult = $collection->insertOne([
                             'link' => $link,
                             'kod' => $kodKisa,
