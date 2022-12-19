@@ -80,8 +80,8 @@ require 'vendor/autoload.php';
                         $insertOneResult = $collection->insertOne([
                             'link' => $link,
                             'kod' => $kodKisa,
-                            'olusTarih' => date("d-m-Y H:i:s"),
-                            'bitisTarih'=>date('d.m.Y H:i:s', strtotime('+3 days')),
+                            'olusTarih' => date("d-m-Y"),
+                            'bitisTarih'=>date('Y-m-d', strtotime('+3 days')),
                             'hit'=>0,
                         ]); ?>
             <div class="Icon-inside">
@@ -108,7 +108,7 @@ require 'vendor/autoload.php';
                     {
                         $guncelle=$collection->updateOne(
                             ['link'=>$link],
-                            ['$set'=>['bitisTarih'=>date('d.m.Y H:i:s', strtotime('+3 days'))]]
+                            ['$set'=>['bitisTarih'=>date('Y-m-d', strtotime('+3 days'))]]
                         ); ?>
 
             <div class="Icon-inside">

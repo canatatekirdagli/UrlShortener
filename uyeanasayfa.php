@@ -98,8 +98,8 @@ foreach ($bul as $a){
                         $insertOneResult = $collection->insertOne([
                             'link' => $link,
                             'kod' => $kodKisa,
-                            'olusTarih' => date("d-m-Y H:i:s"),
-                            'bitisTarih'=>date('d.m.Y H:i:s', strtotime('+3 days')),
+                            'olusTarih' => date("d-m-Y"),
+                            'bitisTarih'=>date('Y-m-d', strtotime('+3 days')),
                             'olusturan'=>$kullaniciAdi,
                             'hit'=>0,
                         ]); ?>
@@ -165,7 +165,7 @@ foreach ($bul as $a){
         <tr>
             <th>Kısa Link</th>
             <th>Kod</th>
-            <th>Link</th>
+            <th >Link</th>
             <th>Tık</th>
             <th>Oluşturulma Tarihi</th>
             <th>Son Kullanma Tarihi</th>
@@ -195,16 +195,17 @@ foreach ($bul as $a){
         ?>
         <?php
         foreach($bul2 as $item){?>
-
+            <?php $tarihters=date("d/m/Y",strtotime($item['bitisTarih'] )); ?>
+            <?php $tarihters2=date("d/m/Y",strtotime($item['olusTarih'] )); ?>
             <tr>
                 <td>http://localhost/UrlShortener/i/<?= $item['kod'] ?></td>
                 <td><?= $item['kod'] ?></td>
                 <td><?= $item['link'] ?></td>
                 <td><?= $item['hit'] ?></td>
-                <td><?= $item['olusTarih'] ?></td>
-                <td><?= $item['bitisTarih'] ?></td>
+                <td><?= $tarihters2 ?></td>
+                <td><?= $tarihters ?></td>
                 <td><a href="linksil.php?kod=<?=$item['kod']?>" id="sil" class="btn btn-danger">Sil</a></td>
-                <td style="text-align:center"><a id="guncelle" href="#" >Güncelle</a></td>
+                <td style="text-align:center"><a id="guncelle" href="guncelle.php?kod=<?=$item['kod']?>" >Güncelle</a></td>
 
             </tr>
 
@@ -256,24 +257,6 @@ foreach ( $bul as $item) {
 
 ?>
 
-<div class="modal">
-    <form>
-        <h3 id="modal-kapat">X</h3>
-        <table>
-
-            <tr>
-                <td>Kod: </td>
-                <td> <input type="text" value="<?=$_SESSION['kod'] ?> "> </td>
-            </tr>
-            <tr>
-                <td> Son Kullanma Tarihi: </td>
-                <td> <input type="datetime-local"> </td>
-            </tr>
-        </table>
-        <input type="submit" value="Kaydet" id="kisalt">
-
-    </form>
-</div>
 
 
 <div class="modal1">

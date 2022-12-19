@@ -23,7 +23,7 @@ if ($kod!="")
             $bitisTar=$a['bitisTarih'];
             $yeniHit=$a['hit']+1;
         }
-        $bugun=date("d-m-Y");
+        $bugun=date("Y-m-d");
         if ($bugun>$bitisTar)
         {
             helper::yonlendir("http://localhost/UrlShortener/404.php"); //HATA SAYFASINA GİDİCEK GEÇERLİLİĞİ BİTMİŞ
@@ -50,7 +50,7 @@ if ($kod!="")
                 $bitisTar=$a['bitisTarih'];
                 $yeniHit=$a['hit']+1;
             }
-            $bugun=date("d-m-Y");
+            $bugun=date("Y-m-d");
             if ($bugun>$bitisTar)
             {
                 helper::yonlendirme("http://localhost/UrlShortener/404.php"); //HATA SAYFASINA GİDİCEK GEÇERLİLİĞİ BİTMİŞ

@@ -13,7 +13,7 @@ body {
 }
 
 html {
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .header {
@@ -25,82 +25,82 @@ html {
 
 .header h1 {
     color: #ffffff;
-    font-weight: 800;
+    font-weight: 600;
     padding-top: 1rem;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
     /*text-decoration:underline;   altı çizili yapmak içindi*/
 }
 
-.giriskutusu {
-    width: 320px;
-    height: 500px;
+
+
+.iframekutusu {
+    width: 500px;
+    height: 400px;
     background: rgba(0, 0, 0, 0.404);
     color: #fff;
-    top: 55%;
-    left: 50%;
+    top: 62%;
+    left: 27%;
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
     border-radius: 30px;
     /* Köşelerin yuvarlak olması için*/
-    padding: 70px 30px;
-    border-bottom-style:solid;
-    border-top-style:solid;
-}
-
-.avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    position: absolute;
-    top: -50px;
-    left: calc(50% - 50px);
-}
-
-h1 {
-    margin: 0;
-    padding: 0 0 20px;
+    padding: 25px 20px;
     text-align: center;
-    font-size: 22px;
 }
 
-.giriskutusu p {
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
+
+.guncellekutu {
+    width: 500px;
+    height: 400px;
+    background: rgba(0, 0, 0, 0.404);
+    color: #fff;
+    top: 62%;
+    left: 69%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    border-radius: 30px;
+    /* Köşelerin yuvarlak olması için*/
+    padding: 25px 20px;
+    text-align: center;
 }
 
-.giriskutusu input {
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    margin-bottom: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+#hata{
+    text-align: center;
 
-.giriskutusu input[type="email"],
-input[type="password"],
-input[type="text"] {
-    border: none;
-    border-bottom: 1px solid #fff;
-    background: transparent;
-    outline: none;
-    height: 40px;
-    color: #fff;
-    font-size: 16px;
 }
-
-.giriskutusu input[type="submit"] {
-    border: none;
-    outline: none;
-    height: 40px;
+.modal form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 3rem;
+    background: rgba(223, 217, 217, 0.116);
+    border-radius: 1.2rem;
+}
+.guncellekutu input[type=submit] {
     background: #40c0b5;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 20px;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    height: 1.9rem;
 }
 
-.giriskutusu input[type="submit"]:hover {
-    /*Fare üzerine geldiğinde olacak değişklikler için hover özelliğini kullanıyoruz.*/
+.guncellekutu input[type=submit]:hover {
     cursor: pointer;
     background: #7c49c4;
-    color: #000;
 }
