@@ -68,7 +68,7 @@
 <br>
 <br>
 <br>
-<a href="index.php"style="text-align: center" >ANA SAYFAMIZI ZİYARET ET!</a>
+<a href="uyeanasayfa.php"style="text-align: center" >ANA SAYFAMIZI ZİYARET ET!</a>
 
 </body>
 </html>
