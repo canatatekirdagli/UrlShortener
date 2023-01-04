@@ -4,7 +4,7 @@ require 'vendor/autoload.php';
 $client = new MongoDB\Client("mongodb+srv://root:1234@mydb.hnuneft.mongodb.net/?retryWrites=true&w=majority");
 $db = $client->UrlShortener;
 
-$collection = $client->UrlShortener->uyekisalt;
+$collection = $client->UrlShortener->kisalt;
 if(isset($_GET["kod"]))
 {
     $bul=$collection->find(

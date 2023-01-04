@@ -83,7 +83,7 @@ foreach ($bul as $a){
                 {
                     if (filter_var($link,FILTER_VALIDATE_URL))
                     {
-                        $collection = $client->UrlShortener->uyekisalt;
+                        $collection = $client->UrlShortener->kisalt;
                         $collection3 = $client->UrlShortener->kisalt;
                         $item=$collection->count(['link'=>$link]);
                         $bul=$collection->find(
@@ -101,7 +101,7 @@ foreach ($bul as $a){
                             $item1=$collection->count(['kod'=>$kodKisa]);
                             $item2=$collection3->count(['kod'=>$kodKisa]);
                         }while($item1!=0 && $item2!=0);
-                        $insertOneResult = $collection->insertOne([
+                        $insertOneResult = $collection3->insertOne([
                             'link' => $link,
                             'kod' => $kodKisa,
                             'olusTarih' => date("d-m-Y"),
@@ -191,7 +191,7 @@ foreach ($bul as $a){
             $kullaniciAdi=$kullanici['kullaniciAdi'];
         }
 
-        $coll1=$client->UrlShortener->uyekisalt;
+        $coll1=$client->UrlShortener->kisalt;
 
         $bul2=$coll1->find(
             [
@@ -222,7 +222,7 @@ foreach ($bul as $a){
 
 
 <?php
-$collection = $client->UrlShortener->uyekisalt;
+$collection = $client->UrlShortener->kisalt;
 $collection1 = $client->UrlShortener->kisalt;
 
 $bul=$collection->find();

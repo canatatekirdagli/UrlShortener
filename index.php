@@ -64,7 +64,7 @@ require 'vendor/autoload.php';
                     $client = new MongoDB\Client("mongodb+srv://root:1234@mydb.hnuneft.mongodb.net/?retryWrites=true&w=majority");
                     $db = $client->UrlShortener;
                     $collection = $client->UrlShortener->kisalt;
-                    $collection1 = $client->UrlShortener->uyekisalt;
+                    $collection1 = $client->UrlShortener->kisalt;
                     $item=$collection->count(['link'=>$link]);
                     $bul=$collection->find(
                         [
@@ -203,7 +203,7 @@ require 'vendor/autoload.php';
 <?php
 $client = new MongoDB\Client("mongodb+srv://root:1234@mydb.hnuneft.mongodb.net/?retryWrites=true&w=majority");
 $db = $client->UrlShortener;
-$collection2 = $client->UrlShortener->uyekisalt;
+$collection2 = $client->UrlShortener->kisalt;
 $collection3 = $client->UrlShortener->kisalt;
 
 $bul=$collection2->find();
