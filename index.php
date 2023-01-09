@@ -193,7 +193,7 @@ require 'vendor/autoload.php';
             <li>Linklerini ve kaç tıklama aldıklarını görebilir.</li> <br>
             <li>Linkleri silinmez, sistem var oldukça kayıtları saklanır.</li> <br>
             <li>Özel link adları oluşturabilir.</li> <br>
-            <li>Yönlendirmeleri pasifleştirebilir.</li> <br>
+            <li>Yönlendirmeleri silebilir.</li> <br>
             <li>3 gün olan link süresini uzatabilir ve kısaltabilir.</li>
         </ul>
 

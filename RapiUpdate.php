@@ -46,11 +46,11 @@ $result = $conn->executeBulkWrite("$dbname.$collection", $update);
 // verify
 if ($result->getModifiedCount() == 1) {
     echo json_encode(
-        array("message" => "Record successfully updated")
+        array("Mesaj" => "Veri başarıyla güncellendi!")
     );
 } else {
     echo json_encode(
-        array("message" => "Error while updating record")
+        array("Mesaj" => "Veri güncellenemedi!")
     );
 }
 

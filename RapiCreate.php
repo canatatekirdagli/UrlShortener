@@ -30,11 +30,11 @@ $result = $conn->executeBulkWrite("$dbname.$collection", $insert);
 // verify
 if ($result->getInsertedCount() == 1) {
     echo json_encode(
-        array("message" => "Record successfully created")
+        array("Mesaj" => "Veri başarıyla kaydedildi!")
     );
 } else {
     echo json_encode(
-        array("message" => "Error while saving record")
+        array("Mesaj" => "Veri keydedilemedi!")
     );
 }
 

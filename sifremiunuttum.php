@@ -35,7 +35,7 @@ if ($_POST) {
         $mail->Host='smtp.gmail.com';
 
         $mail->Username="kocaeli.uni92@gmail.com";
-        $mail->Password="bcasiimvuadwfyxz";
+        $mail->Password="ruyqoazxecaxhkjx";
 
         $mail->setFrom("kocaeli.uni92@gmail.com","ANT URL SHORTENER");
         $mail->addAddress($email);

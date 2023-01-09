@@ -37,11 +37,11 @@ $result = $conn->executeBulkWrite("$dbname.$collection", $delete);
 // verify
 if ($result->getDeletedCount() == 1) {
     echo json_encode(
-        array("message" => "Record successfully deleted")
+        array("Mesaj" => "Veri başarıyla silindi!")
     );
 } else {
     echo json_encode(
-        array("message" => "Error while deleting record")
+        array("Mesaj" => "Veri silinemedi!")
     );
 }
 
